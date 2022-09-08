@@ -1,22 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from './pages/Home';
 import * as React from 'react';
-import Button from '@mui/material/Button';
-import Navbar from './Navbar';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div className="App">
-      <Navbar>
+      <BrowserRouter>
+        <Navbar />
+        <div className='pages'>
+          <Routes>
+            <Route path='/' element={<Home />} />
+          </Routes>
 
-      </Navbar>
-
-      <header className="App-header">
-
-        <Button>
-          Add a Movie
-        </Button>
-      </header>
+        </div>
+      </BrowserRouter>
     </div>
   );
 }
