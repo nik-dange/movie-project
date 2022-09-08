@@ -1,26 +1,22 @@
 const express = require('express');
 const {
-    createReview
+    createReview,
+    getAllReviews,
+    getReview,
+    deleteReview,
+    updateReview
 } = require('../controllers/reviewController')
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.json({ msg: "Getting all reviews" });
-});
+router.get('/', getAllReviews);
 
-router.get('/:id', (req, res) => {
-    res.json({ msg: "Get a single review on id" })
-})
+router.get('/:id', getReview);
 
-router.post('/', createReview)
+router.post('/', createReview);
 
-router.delete('/:id', (req, res) => {
-    res.json({ msg: "DELETE an existing review" })
-})
+router.delete('/:id', deleteReview)
 
-router.patch('/:id', (req, res) => {
-    res.json({ msg: "PATCH an existing review" })
-})
+router.patch('/:id', updateReview)
 
 module.exports = router
