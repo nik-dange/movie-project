@@ -69,7 +69,7 @@ const deleteReview = async (req, res) => {
         return res.status(400).json({ error: 'That review does not exist!' });
     }
 
-    res.status(200).json(workout);
+    res.status(200).json(review);
 }
 
 //update a review

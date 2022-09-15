@@ -1,17 +1,17 @@
 import React from 'react'
 import ReviewDetails from '../components/ReviewDetails'
+import ReviewForm from '../components/ReviewForm'
+import { useReviewContext } from '../hooks/useReviewContext'
 
 const Home = () => {
-
-    const [reviews, setReviews] = React.useState(null)
-
+    const { reviews, dispatch } = useReviewContext()
+    debugger;
     React.useEffect(() => {
         const fetchReviews = async () => {
             const res = await fetch('/api/reviews')
             const resJson = await res.json()
             if (res.ok) {
-                debugger;
-                setReviews(resJson)
+                dispatch({ type: 'SET_REVIEWS', payload: resJson })
             } else {
                 console.log("Failed to fetch reviews");
             }
@@ -27,6 +27,7 @@ const Home = () => {
                     <ReviewDetails key={review._id} review={review}></ReviewDetails>
                 ))}
             </div>
+            <ReviewForm></ReviewForm>
         </div >
     )
 }
