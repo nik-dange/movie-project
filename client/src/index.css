@@ -43,6 +43,13 @@ header a {
   gap: 100px;
 }
 
+.login {
+  display: flex;
+  justify-content: center;
+}
+
+.login-button {}
+
 .review-details {
   background: #fff;
   border-radius: 4px;
@@ -65,6 +72,18 @@ header a {
 }
 
 .review-details span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 50%;
+  color: #333;
+
+}
+
+.sign-out {
   position: absolute;
   top: 20px;
   right: 20px;

@@ -5,7 +5,7 @@ import { useReviewContext } from '../hooks/useReviewContext'
 
 const Home = () => {
     const { reviews, dispatch } = useReviewContext()
-    debugger;
+    // debugger;
     React.useEffect(() => {
         const fetchReviews = async () => {
             const res = await fetch('/api/reviews')
